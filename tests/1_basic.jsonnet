@@ -31,7 +31,7 @@ local pts = [pt1, pt2, pt3];
           {path: "birthDate",   alias: "bod"}
         ]
       },
-      result: [{id: pt1.id, bod: pt1.birthDate} for pt in pts]
+      result: [{id: pt.id, bod: pt.birthDate} for pt in pts]
     },
     {
       title: "first()",
