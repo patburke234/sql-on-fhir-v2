@@ -71,11 +71,11 @@
       view: {
         resource: "Patient",
         select: [
-          {expression: "id", name: "id"},
+          {path: "id", alias: "id"},
           {
             forEach: "name",
             select: [
-              {expression: 'family'}
+              {path: 'family'}
             ]
           }
         ]
@@ -95,23 +95,23 @@
       view: {
         resource: "Patient",
         select: [
-          {expression: "id", name: "id"},
+          {path: "id", alias: "id"},
           {
             forEach: "contact",
             select: [
               {
-                expression: "organization.getId()",
-                name: "org"
+                path: "organization.getId()",
+                alias: "org"
               },
               {
                 forEach: "telecom.where(system='phone')",
-                select: [{expression: "value", name: "phone"}]
+                select: [{path: "value", alias: "phone"}]
               },
               {
                 forEach: "relationship",
                 select: [
-                  {expression: "code", name: "rel_code"},
-                  {expression: "system", name: "rel_system"},
+                  {path: "code", alias: "rel_code"},
+                  {path: "system", alias: "rel_system"},
                 ]
               },
             ]

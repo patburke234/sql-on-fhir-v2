@@ -96,12 +96,12 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
-                  "expression": "birthDate",
-                  "name": "bod"
+                  "alias": "bod",
+                  "path": "birthDate"
                }
             ]
          }
@@ -133,20 +133,20 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
-                  "expression": "birthDate",
-                  "name": "bod"
+                  "alias": "bod",
+                  "path": "birthDate"
                },
                {
-                  "expression": "name.family.first()",
-                  "name": "last_name"
+                  "alias": "last_alias",
+                  "path": "name.family.first()"
                },
                {
-                  "expression": "name.given.first()",
-                  "name": "first_name"
+                  "alias": "first_alias",
+                  "path": "name.given.first()"
                }
             ]
          }
@@ -202,20 +202,20 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
-                  "expression": "birthDate",
-                  "name": "bod"
+                  "alias": "bod",
+                  "path": "birthDate"
                },
                {
-                  "expression": "name.family",
-                  "name": "last_name"
+                  "alias": "last_alias",
+                  "path": "name.family"
                },
                {
-                  "expression": "name.given",
-                  "name": "first_name"
+                  "alias": "first_alias",
+                  "path": "name.given"
                }
             ]
          }
@@ -259,12 +259,12 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
-                  "expression": "name.first()",
-                  "name": "name"
+                  "alias": "alias",
+                  "path": "name.first()"
                }
             ]
          }
@@ -290,12 +290,12 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
-                  "expression": "address.city.first()",
-                  "name": "city"
+                  "alias": "city",
+                  "path": "address.city.first()"
                }
             ]
          }
@@ -321,12 +321,12 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
-                  "expression": "name.where(use='official').family.first()",
-                  "name": "ln"
+                  "alias": "ln",
+                  "path": "name.where(use='official').family.first()"
                }
             ]
          }

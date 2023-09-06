@@ -27,8 +27,8 @@ local pts = [pt1, pt2, pt3];
       view: {
         resource: "Patient",
         select: [
-          {expression: "id", name: "id"},
-          {expression: "birthDate",   name: "bod"}
+          {path: "id", alias: "id"},
+          {path: "birthDate",   alias: "bod"}
         ]
       },
       result: [{id: pt1.id, bod: pt1.birthDate} for pt in pts]
@@ -39,10 +39,10 @@ local pts = [pt1, pt2, pt3];
       view: {
         resource: "Patient",
         select: [
-          {expression: "id", name: "id"},
-          {expression: "birthDate",   name: "bod"},
-          {expression: "name.family.first()", name: "last_name"},
-          {expression: "name.given.first()",  name: "first_name"},
+          {path: "id", alias: "id"},
+          {path: "birthDate",   alias: "bod"},
+          {path: "name.family.first()", alias: "last_alias"},
+          {path: "name.given.first()",  alias: "first_alias"},
         ]
       },
       result: [
@@ -56,10 +56,10 @@ local pts = [pt1, pt2, pt3];
       view: {
         resource: "Patient",
         select: [
-          {expression: "id", name: "id"},
-          {expression: "birthDate",   name: "bod"},
-          {expression: "name.family", name: "last_name"},
-          {expression: "name.given",  name: "first_name"},
+          {path: "id", alias: "id"},
+          {path: "birthDate",   alias: "bod"},
+          {path: "name.family", alias: "last_alias"},
+          {path: "name.given",  alias: "first_alias"},
         ]
       },
       result: [
@@ -78,8 +78,8 @@ local pts = [pt1, pt2, pt3];
       view: {
         resource: "Patient",
         select: [
-          {expression: "id", name: "id"},
-          {expression: "name.first()",  name: "name"},
+          {path: "id", alias: "id"},
+          {path: "name.first()",  alias: "alias"},
         ]
       },
       result: [{id: pt1.id, name: pt1.name[0]} for pt in pts]
@@ -90,8 +90,8 @@ local pts = [pt1, pt2, pt3];
       view: {
         resource: "Patient",
         select: [
-          {expression: "id", name: "id"},
-          {expression: "address.city.first()",  name: "city"},
+          {path: "id", alias: "id"},
+          {path: "address.city.first()",  alias: "city"},
         ]
       },
       result: [
@@ -108,8 +108,8 @@ local pts = [pt1, pt2, pt3];
       view: {
         resource: "Patient",
         select: [
-          {expression: "id", name: "id"},
-          {expression: "name.where(use='official').family.first()",  name: "ln"},
+          {path: "id", alias: "id"},
+          {path: "name.where(use='official').family.first()",  alias: "ln"},
         ]
       },
       result: [

@@ -112,12 +112,12 @@
             "resourceType": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
-                  "expression": "name.given",
-                  "name": "first_name"
+                  "alias": "first_alias",
+                  "path": "name.given"
                }
             ]
          }
@@ -161,12 +161,12 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
-                  "expression": "name.first()",
-                  "name": "name"
+                  "alias": "alias",
+                  "path": "name.first()"
                }
             ]
          }

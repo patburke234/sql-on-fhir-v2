@@ -135,14 +135,14 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
                   "forEach": "name",
                   "select": [
                      {
-                        "expression": "family"
+                        "path": "family"
                      }
                   ]
                }
@@ -182,22 +182,22 @@
             "resource": "Patient",
             "select": [
                {
-                  "expression": "id",
-                  "name": "id"
+                  "alias": "id",
+                  "path": "id"
                },
                {
                   "forEach": "contact",
                   "select": [
                      {
-                        "expression": "organization.getId()",
-                        "name": "org"
+                        "alias": "org",
+                        "path": "organization.getId()"
                      },
                      {
                         "forEach": "telecom.where(system='phone')",
                         "select": [
                            {
-                              "expression": "value",
-                              "name": "phone"
+                              "alias": "phone",
+                              "path": "value"
                            }
                         ]
                      },
@@ -205,12 +205,12 @@
                         "forEach": "relationship",
                         "select": [
                            {
-                              "expression": "code",
-                              "name": "rel_code"
+                              "alias": "rel_code",
+                              "path": "code"
                            },
                            {
-                              "expression": "system",
-                              "name": "rel_system"
+                              "alias": "rel_system",
+                              "path": "system"
                            }
                         ]
                      }
